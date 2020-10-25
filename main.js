@@ -2,8 +2,8 @@ const positive = document.getElementById("positive");
 const recovery = document.getElementById("recovery");
 const pcr = document.getElementById("pcr");
 const death = document.getElementById("death");
-const mt = "";
-const mnt_msg = "現在メンテナンス中です";
+const mt = "mnt";
+const mnt_msg = "現在制作中";
 
 const api = "https://covid19-japan-web-api.now.sh/api/v1/prefectures";
 const api_all = "https://covid19-japan-web-api.now.sh/api/v1/total";
