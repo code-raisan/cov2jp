@@ -2,8 +2,6 @@ const positive = document.getElementById("positive");
 const recovery = document.getElementById("recovery");
 const pcr = document.getElementById("pcr");
 const death = document.getElementById("death");
-//const js  = document.getElementById("js");
-//js.innerText = "";
 const mt = "";
 const mnt_msg = "現在メンテナンス中です";
 
