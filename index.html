@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./load.css">
+    <link rel="stylesheet" href="./palette.css">
+    <title>Covid19</title>
+</head>
+<body>
+    <div id="loader-bg"><!--ロードアニメーション-->
+        <p style="text-align: center; margin-top: 20vh;">全国コロナウイルス対策サイト</p>
+        <p id="load_text" style="text-align: center; margin-top: 5vh;">読み込み中...</p>
+        <div id="loader">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <header>
+        <div id="nav-drawer">
+            <input id="nav-input" type="checkbox" class="nav-unshown">
+            <label id="nav-open" for="nav-input"><span></span></label>
+            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+            <div id="nav-content">
+                <ul>
+                    <li><a href="./about/">このサイトについて</a></li>
+                    <li><a href="./conct">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <noscript><!--JSの使用通知-->JavaScriptを有効にしてください</noscript>
+    <div style="margin-bottom: 20px;" class="container">
+        <section>
+            <p class="top">全国統計</p>
+            <ul class="now">
+                <li class="box bc-red">
+                    <div>
+                        <p>感染者数</p>
+                        <p id="positive">Loading...</p>
+                    </div>
+                </li>
+                <li class="box bc-green">
+                    <div>
+                        <p>回復者数</p>
+                        <p id="recovery">Loading...</p>
+                    </div>
+                </li>
+                <li class="box bc-blue">
+                    <div>
+                        <p>PCR検査数</p>
+                        <p id="pcr">Loading...</p>
+                    </div>
+                </li>
+                <li class="box bc-gray">
+                    <div>
+                        <p>死亡者数</p>
+                        <p id="death">Loading...</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div class="card">
+                <p>
+                    このサイトは有志の方が収集した情報を利用しています。取得先については<a href="./about/get/">こちら</a>から<br/>
+                    最新の情報は<a href="./about/now/">公式サイト一覧</a>よりご確認ください。
+                </p>
+            </div>
+            <div class="card">
+                <p>COCOAをダウンロードしましょう!</p>
+                <div id="app">
+                    <p id="qr"></p>
+                    <a class="btn" id="cocoa" href="https:///riyblog.shop/redirect/?type=app&name=cocoa">Android/IOS  ダウンロード</a>
+                </div>
+                <p>
+                    三密チェッカーもダウンロードすることをお勧めします。
+                    即座にその場の密度合いが分かって便利です
+                </p>
+                <a class="btn" href="https:///riyblog.shop/redirect/?type=app&name=3densechecker">Android ダウンロード</a>
+                <p>製作 : <a href="https:///riyblog.shop/redirect/?type=link&url=https://rabbitprogram.com/support/threec">ラビットプログラム</a>さん</p>
+            </div>
+            <div class="card">
+                <a href="#" id="btn-ac" onclick="ac()">グラフを非表示にする</a>
+                <div id="chart_div" class="b" style="width: 100%; height: 1500px;"></div>
+                <script>
+                    const element = document.getElementById("chart_div");
+                    const bttext = document.getElementById("btn-ac");
+                    function ac(){
+                        if(element.classList.contains("b")){
+                            element.className = "n";
+                            bttext.innerText = "グラフを表示する";
+                        }else{
+                            element.className = "b";
+                            bttext.innerText = "グラフを非表示にする";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="card">
+                <p>県名を指定して情報を取得</p>
+            </div>
+        </section>
+    </div>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="./main.js"></script>
+    <script src="./messt.js"></script>
+    <script src="./grf.js"></script>
+</body>
+</html>
